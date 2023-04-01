@@ -1,3 +1,7 @@
 #!/bin/bash
-# Bash script that sends a request to a URL passed as an argument
-curl -sI -w '%{response_code}' "$1" -o /dev/null
+
+# check if the URL is passed as an argument
+if [ -z "$1" ]; then
+  echo "URL is missing."
+  exit 1
+fi
